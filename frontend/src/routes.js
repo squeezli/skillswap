@@ -15,6 +15,7 @@ export const useRoutes = () => {
     if (user.isAuth) {
         return (
             <Routes>
+                
                 <Route path="/ads" element={<Ads />} />
 
                 <Route path="/ads/:id" element={<AdsMore />} />
