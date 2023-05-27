@@ -3,24 +3,38 @@ import { Button, Container, Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { NavLink, useLocation } from 'react-router-dom'
 import Row from 'react-bootstrap/Row';
-// import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
+import {useHttp} from "../hooks/http.hooks";
+
 const Auth = () => {
-const LOGIN_ROUTE = '/login';
-const REGISTRATION_ROUTE = '/login';
+    const LOGIN_ROUTE = '/login';
+    const REGISTRATION_ROUTE = '/login';
+
+    const {request} = useHttp();
+
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const click = async () => {
-    //     if (isLogin) {
-    //         const response = await login()
 
-    //     } else {
-    //         const response = await registration(email, password)
-    //         console.log(response)
+    const [form, setForm] = useState({
+        email: '', password: ''
+    });
 
-    //     }
-    // }
+    const changeHandler = event => {
+        setForm({ ...form, [event.target.name]: event.target.value })
+    }
+
+    const click = async () => {
+        if (isLogin) {
+            console.log(form)
+            const response = request(`/api/auth/login`, 'POST', {...form})
+
+        } else {
+            // const response = await registration(email, password)
+            // console.log(response)
+
+        }
+    }
 
 
     return (
@@ -33,17 +47,21 @@ const REGISTRATION_ROUTE = '/login';
                 <Form className='d-flex flex-column' lg='2'>
                     <Form.Control
                         className='mt-3'
+                        id='email'
+                        name='email'
                         placeholder='Введите ваш email...'
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        value={form.email}
+                        onChange={changeHandler}
                     >
                     </Form.Control>
 
                     <Form.Control
                         className='mt-3'
+                        id='password'
+                        name='password'
                         placeholder='Введите ваш пароль...'
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        value={form.password}
+                        onChange={changeHandler}
                         type='password'
                     >
                     </Form.Control>
@@ -66,12 +84,12 @@ const REGISTRATION_ROUTE = '/login';
                                 <Button style={{ height: 40 }} variant='outline-success' >Регистрация</Button>
                             </div>
                         }
-                        {/* <Button
+                        <Button
                             variant='outline-success'
                             onClick={click}
                         >
-                            {isLogin ? 'Войти': 'Регистрация'}
-                        </Button> */}
+                            {isLogin ? 'Войти' : 'Регистрация'}
+                        </Button>
                     </Row>
                 </Form>
             </Card>

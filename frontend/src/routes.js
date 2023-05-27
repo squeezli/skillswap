@@ -11,12 +11,13 @@ import AdsMore from "./pages/AdsMore";
 export const useRoutes = () => {
 
     const { user } = useContext(Context)
-    console.log(user)
+    console.log(user.isAuth)
     if (user.isAuth) {
         return (
             <Routes>
                 <Route path="/ads" element={<Ads />} />
                 <Route path="/ads/:id" element={<Ads />} />
+                <Route path="/chat" element={<Ads />} />
 
 
                 <Route path="/*" element={<Navigate replace to="/ads" />} />
@@ -27,6 +28,8 @@ export const useRoutes = () => {
 
     return (
         <Routes>
+
+            {/* <Route path="/ads" element={<Ads />} /> */}
             <Route path="/login" element={<Auth />} />
             <Route path="/registration" element={<Auth />} />
 
