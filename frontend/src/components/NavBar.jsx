@@ -36,7 +36,7 @@ const NavBar = observer(() => {
                             <Image onClick={handleShow } style={{ width: 45, height: 45, marginLeft: 10 }} src="https://logos.telegram-plus.com/channels/id-daily/telegram_logo.jpg" roundedCircle />
                             <Offcanvas show={show} onHide={handleClose} placement='end'>
                                 <Offcanvas.Header closeButton>
-                                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                                    <Offcanvas.Title>Профиль</Offcanvas.Title>
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
                                     Some text as placeholder. In real life you can have the elements you
