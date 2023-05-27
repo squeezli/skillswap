@@ -24,14 +24,14 @@ const NavBar = observer(() => {
             <Container className='d-flex justify-content-beetwin align-items-center ' >
                 <Navbar.Brand onClick={() => navigate(`${ADS_ROUTE}`)}>SkillSwap</Navbar.Brand>
 
-                {user ?
+                {user.isAuth ?
                     <Nav className=' w-50 d-flex justify-content-beetwin align-items-center '>
                         <Nav.Link onClick={() => navigate(`${ADS_ROUTE}`)}>Объявления</Nav.Link>
                         <Nav.Link onClick={() => navigate(`${CHAT_ROUTE}`)}>Чаты</Nav.Link>
                         <Nav.Link style={{ whiteSpace: 'nowrap' }} onClick={() => navigate(`${MYADS_ROUTE}`)}>Мои Объявления</Nav.Link>
 
                         <Container className='d-flex justify-content-end align-items-center'>
-                            <Button variant='outline-light' className='m-1' onClick={() => navigate(`${LOGIN_ROUTE}`)}>Выйти</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() => {user.setIsAuth(false); navigate(`${LOGIN_ROUTE}`)}}>Выйти</Button>
 
                             <Image onClick={handleShow } style={{ width: 45, height: 45, marginLeft: 10 }} src="https://logos.telegram-plus.com/channels/id-daily/telegram_logo.jpg" roundedCircle />
                             <Offcanvas show={show} onHide={handleClose} placement='end'>
@@ -49,12 +49,13 @@ const NavBar = observer(() => {
                     </Nav>
 
                     :
+                    
                     <Nav className=' w-50 d-flex justify-content-beetwin align-items-center '>
                         <Nav.Link onClick={() => navigate(`${ADS_ROUTE}`)}>Объявления</Nav.Link>
 
                         <Container className='d-flex justify-content-end align-items-center'>
                             {/* <Button variant='outline-light' className='m-1' onClick={() => navigate(`${REGISTRATION_ROUTE}`)}>Зарегистрироваться</Button> */}
-                            <Button variant='outline-light' className='m-1' onClick={() => navigate(`${LOGIN_ROUTE}`)}>Авторизоваться</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() =>{ user.setIsAuth(true);navigate(`${LOGIN_ROUTE}`)}}>Авторизоваться</Button>
                         </Container>
 
                     </Nav>
