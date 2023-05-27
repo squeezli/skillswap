@@ -3,7 +3,7 @@ import { Context } from '../index';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { ADS_ROUTE, CHAT_ROUTE, LOGIN_ROUTE, MYADS_ROUTE, PROFILE_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
+// import { ADS_ROUTE, CHAT_ROUTE, LOGIN_ROUTE, MYADS_ROUTE, PROFILE_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
 import { Button } from 'react-bootstrap';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,14 @@ import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 const NavBar = observer(() => {
+
+
+    const ADS_ROUTE = 'ads';
+    const CHAT_ROUTE = 'chat';
+    const LOGIN_ROUTE = 'login';
+    const MYADS_ROUTE ='myads';
+
+
     const { user } = useContext(Context)
     const [show, setShow] = useState(false);
 

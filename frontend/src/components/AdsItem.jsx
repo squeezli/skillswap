@@ -4,9 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 import { useNavigate } from 'react-router-dom';
-import { ADS_ROUTE } from '../utils/consts';
+
 
 const AdsItem = ({ad})=>{
+const ADS_ROUTE = '/ads'
     const navigate = useNavigate()
     return (
         <Card style={{padding:0}} className='m-2'>
