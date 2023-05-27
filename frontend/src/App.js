@@ -12,7 +12,7 @@ const App = ()=>{
     <BrowserRouter>
       <NavBar />
         {routes}
-      <FooterBar/>
+      {/* <FooterBar/> */}
     </BrowserRouter>
   )
 }

@@ -5,6 +5,7 @@ import { Context } from "./index";
 import Auth from "./pages/Auth";
 import Ads from "./pages/Ads";
 import Chat from './pages/Chat';
+import MyAds from './pages/MyAds';
 import AdsMore from "./pages/AdsMore";
 import { observer } from 'mobx-react-lite';
 
@@ -45,6 +46,7 @@ const useRoutes = () => {
                 :
                 <Routes>                    
                     <Route path="/chat" element={<Chat />} />
+                    <Route path="/myAds" element={<MyAds />} />
                     <Route path="/login" element={<Auth />} />
                     <Route path="/registration" element={<Auth />} />
                     <Route path="/ads" element={<Ads />} />

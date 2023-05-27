@@ -17,7 +17,7 @@ const NavBar = observer(() => {
     const ADS_ROUTE = '/ads';
     const CHAT_ROUTE = '/chat';
     const LOGIN_ROUTE = '/login';
-    const MYADS_ROUTE ='/myads';
+    const MYADS_ROUTE ='/myAds';
 
 
     const { user } = useContext(Context)
@@ -39,7 +39,7 @@ const NavBar = observer(() => {
                         <Nav.Link style={{ whiteSpace: 'nowrap' }} onClick={() => navigate(`${MYADS_ROUTE}`)}>Мои Объявления</Nav.Link>
 
                         <Container className='d-flex justify-content-end align-items-center'>
-                            <Button variant='outline-light' className='m-1' onClick={() => {user.setIsAuth(false);user.setUser(false); console.log(user); navigate(`${LOGIN_ROUTE}`)}}>Выйти</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() => {user.setIsAuth(false); navigate(`${ADS_ROUTE}`)}}>Выйти</Button>
 
                             <Image onClick={handleShow } style={{ width: 45, height: 45, marginLeft: 10 }} src="https://logos.telegram-plus.com/channels/id-daily/telegram_logo.jpg" roundedCircle />
                             <Offcanvas show={show} onHide={handleClose} placement='end'>
