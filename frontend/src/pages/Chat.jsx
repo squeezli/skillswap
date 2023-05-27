@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import AdsList from '../components/AdsList';
 
-const Chat = ()=>{
-    return(
+const Chat = () => {
+    return (
         <Container>
             <Row className='mt-4'>
                 <Col md={3}>
@@ -17,7 +17,8 @@ const Chat = ()=>{
                 <Col md={9}>
                     <h3>CHAt</h3>
 
-bdkjdskjnjk    bdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjkbdkjdskjnjk            </Col>
+                    bdkjdskjnjk
+                </Col>
             </Row>
         </Container>
     )
