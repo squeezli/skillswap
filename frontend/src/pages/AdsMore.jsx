@@ -10,7 +10,7 @@ import AdsList from '../components/AdsList';
 const AdsMore = () => {
     const navigate = useNavigate()
 
-    const ADS_ROUTE = '/Ads'
+    const ADS_ROUTE = '/ads'
 
     return (
         <Container

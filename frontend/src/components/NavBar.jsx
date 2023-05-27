@@ -14,10 +14,10 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 const NavBar = observer(() => {
 
 
-    const ADS_ROUTE = 'ads';
-    const CHAT_ROUTE = 'chat';
-    const LOGIN_ROUTE = 'login';
-    const MYADS_ROUTE ='myads';
+    const ADS_ROUTE = '/ads';
+    const CHAT_ROUTE = '/chat';
+    const LOGIN_ROUTE = '/login';
+    const MYADS_ROUTE ='/myads';
 
 
     const { user } = useContext(Context)
@@ -57,13 +57,13 @@ const NavBar = observer(() => {
                     </Nav>
 
                     :
-                    
+
                     <Nav className=' w-50 d-flex justify-content-beetwin align-items-center '>
                         <Nav.Link onClick={() => navigate(`${ADS_ROUTE}`)}>Объявления</Nav.Link>
 
                         <Container className='d-flex justify-content-end align-items-center'>
                             {/* <Button variant='outline-light' className='m-1' onClick={() => navigate(`${REGISTRATION_ROUTE}`)}>Зарегистрироваться</Button> */}
-                            <Button variant='outline-light' className='m-1' onClick={() =>{ user.setIsAuth(true);navigate(`${LOGIN_ROUTE}`)}}>Авторизоваться</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() =>{ user.setIsAuth(true); navigate(`${LOGIN_ROUTE}`)}}>Авторизоваться</Button>
                         </Container>
 
                     </Nav>

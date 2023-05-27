@@ -6,31 +6,56 @@ import Auth from "./pages/Auth";
 import Ads from "./pages/Ads";
 import Chat from './pages/Chat';
 import AdsMore from "./pages/AdsMore";
+import { observer } from 'mobx-react-lite';
 
-
-export const useRoutes = () => {
+const useRoutes = () => {
 
     const { user } = useContext(Context)
     console.log(user)
-    if (user.isAuth) {
-        return (
-            <Routes>
-                <Route path="/ads" element={<Ads />} />
-                <Route path="/ads/:id" element={<AdsMore />} />
-                <Route path="/chat" element={<Chat />} />
-                <Route path="/*" element={<Navigate replace to="/ads" />} />
-            </Routes>
-        )
-    }
+    // if (user.isAuth) {
+    //     return (
+    //         <Routes>
+    //             <Route path="/ads" element={<Ads />} />
+    //             <Route path="/ads/:id" element={<AdsMore />} />
+    //             <Route path="/chat" element={<Chat />} />
+    //             <Route path="/*" element={<Navigate replace to="/ads" />} />
+    //         </Routes>
+    //     )
+    // }
 
 
+    // return (
+    //     <Routes>
+    //         <Route path="/login" element={<Auth />} />
+    //         <Route path="/registration" element={<Auth />} />
+    //         <Route path="/ads" element={<Ads />} />
+    //         <Route path="/ads/:id" element={<AdsMore />} />
+    //         <Route path="/*" element={<Navigate replace to="/login" />} />
+    //     </Routes>
+    // )
     return (
-        <Routes>
-            <Route path="/login" element={<Auth />} />
-            <Route path="/registration" element={<Auth />} />
-            <Route path="/ads" element={<Ads />} />
-            <Route path="/ads/:id" element={<AdsMore />} />
-            <Route path="/*" element={<Navigate replace to="/login" />} />
-        </Routes>
-    )
+        <>
+            {user.isAuth ?
+                <Routes>
+                    <Route path="/ads" element={<Ads />} />
+                    <Route path="/ads/:id" element={<AdsMore />} />
+                    <Route path="/chat" element={<Chat />} />
+                    <Route path="/*" element={<Navigate replace to="/ads" />} />
+                </Routes>
+                :
+                <Routes>                    
+                    <Route path="/chat" element={<Chat />} />
+                    <Route path="/login" element={<Auth />} />
+                    <Route path="/registration" element={<Auth />} />
+                    <Route path="/ads" element={<Ads />} />
+                    <Route path="/ads/:id" element={<AdsMore />} />
+                    <Route path="/*" element={<Navigate replace to="/login" />} />
+                </Routes>
+
+            }
+        </>
+
+    );
 }
+
+export default useRoutes;
