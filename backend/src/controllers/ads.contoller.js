@@ -1,9 +1,11 @@
-const Ads = require('../models/Ads');
+const Ads = require('../models/helpRequest.models');
 class AdsController {
     
     async create(req, res){
-        const {name} = req.body
-        const ads = await Ads.create({name})
+        const {title, description, location, skillId} = req.body
+        // const userId = req.user.id || 1
+        const userId = 1
+        const ads = await Ads.create({title, description, location, userId, skillId})
         return res.json(ads)
     }
     async getAll(req, res){
