@@ -53,7 +53,7 @@ const NavBar = observer(() => {
                         <Nav.Link onClick={() => navigate(`${ADS_ROUTE}`)}>Объявления</Nav.Link>
 
                         <Container className='d-flex justify-content-end align-items-center'>
-                            <Button variant='outline-light' className='m-1' onClick={() => navigate(`${REGISTRATION_ROUTE}`)}>Зарегистрироваться</Button>
+                            {/* <Button variant='outline-light' className='m-1' onClick={() => navigate(`${REGISTRATION_ROUTE}`)}>Зарегистрироваться</Button> */}
                             <Button variant='outline-light' className='m-1' onClick={() => navigate(`${LOGIN_ROUTE}`)}>Авторизоваться</Button>
                         </Container>
 
