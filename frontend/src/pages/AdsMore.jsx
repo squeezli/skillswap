@@ -1,12 +1,10 @@
 import React from 'react';
 import { Button, Container, Form, Image } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { ADS_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
-import { useNavigate } from 'react-router-dom';
-
+// import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
 import AdsList from '../components/AdsList';
 
 const AdsMore = () => {

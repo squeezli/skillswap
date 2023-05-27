@@ -17,6 +17,6 @@ export default class UserService {
     }
 
     get user(){
-        return this._isUser
+        return this._user
     }
 }
