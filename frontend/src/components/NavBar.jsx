@@ -24,7 +24,7 @@ const NavBar = observer(() => {
             <Container className='d-flex justify-content-beetwin align-items-center ' >
                 <Navbar.Brand onClick={() => navigate(`${ADS_ROUTE}`)}>SkillSwap</Navbar.Brand>
 
-                {user.isAuth ?
+                {user ?
                     <Nav className=' w-50 d-flex justify-content-beetwin align-items-center '>
                         <Nav.Link onClick={() => navigate(`${ADS_ROUTE}`)}>Объявления</Nav.Link>
                         <Nav.Link onClick={() => navigate(`${CHAT_ROUTE}`)}>Чаты</Nav.Link>

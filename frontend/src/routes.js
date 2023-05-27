@@ -1,5 +1,6 @@
 import Auth from "./pages/Auth";
 import Ads from "./pages/Ads";
+import AdsMore from "./pages/AdsMore";
 import {ADS_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE } from "./utils/consts"
 
 export const authRoutes = [
@@ -23,6 +24,10 @@ export const publicRoutes = [
     {
         path: ADS_ROUTE,
         element: <Ads/>
+    },    
+    {
+        path: ADS_ROUTE + '/:id',
+        element: <AdsMore/>
     },    
 
 ]

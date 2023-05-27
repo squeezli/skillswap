@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 import { useNavigate } from 'react-router-dom';
-import { PRODUCT_ROUTE } from '../utils/consts';
+import { ADS_ROUTE } from '../utils/consts';
 
 const AdsItem = ({ad})=>{
     const navigate = useNavigate()
@@ -17,7 +17,7 @@ const AdsItem = ({ad})=>{
               {ad.description}
             </Card.Text>
 
-            <Button variant="outline-primary">Подробнее</Button>
+            <Button variant="outline-primary" onClick={() => navigate(`${ADS_ROUTE}/${ad.id}`)}>Подробнее</Button>
           </Card.Body>
         </Card>
     )
