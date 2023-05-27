@@ -5,6 +5,9 @@ import { Context } from "./index";
 import Auth from "./pages/Auth";
 import Ads from "./pages/Ads";
 
+import AdsMore from "./pages/AdsMore";
+
+
 export const useRoutes = () => {
 
     const { user } = useContext(Context)
@@ -20,6 +23,7 @@ export const useRoutes = () => {
             </Routes>
         )
     }
+
 
     return (
         <Routes>
