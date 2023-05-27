@@ -29,8 +29,6 @@ const AdsMore = () => {
                     <Button variant='outline-dark' className='m-1 mt-4' onClick={() => navigate(`${ADS_ROUTE}`)}>Назад</Button>
 
                 </Col>
-
-
             </Card>
         </Container>
     )
