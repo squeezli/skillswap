@@ -12,7 +12,7 @@ import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 const NavBar = observer(() => {
-    const user = true //useContext(Context)
+    const { user } = useContext(Context)
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -24,7 +24,7 @@ const NavBar = observer(() => {
             <Container className='d-flex justify-content-beetwin align-items-center ' >
                 <Navbar.Brand onClick={() => navigate(`${ADS_ROUTE}`)}>SkillSwap</Navbar.Brand>
 
-                {user ?
+                {user.isAuth ?
                     <Nav className=' w-50 d-flex justify-content-beetwin align-items-center '>
                         <Nav.Link onClick={() => navigate(`${ADS_ROUTE}`)}>Объявления</Nav.Link>
                         <Nav.Link onClick={() => navigate(`${CHAT_ROUTE}`)}>Чаты</Nav.Link>
@@ -54,7 +54,7 @@ const NavBar = observer(() => {
 
                         <Container className='d-flex justify-content-end align-items-center'>
                             <Button variant='outline-light' className='m-1' onClick={() => navigate(`${REGISTRATION_ROUTE}`)}>Зарегистрироваться</Button>
-                            <Button variant='outline-light' className='m-1' onClick={() => navigate(`${LOGIN_ROUTE}`)}>Войти</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() => navigate(`${LOGIN_ROUTE}`)}>Авторизоваться</Button>
                         </Container>
 
                     </Nav>
