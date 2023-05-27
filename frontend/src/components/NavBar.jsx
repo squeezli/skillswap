@@ -39,7 +39,7 @@ const NavBar = observer(() => {
                         <Nav.Link style={{ whiteSpace: 'nowrap' }} onClick={() => navigate(`${MYADS_ROUTE}`)}>Мои Объявления</Nav.Link>
 
                         <Container className='d-flex justify-content-end align-items-center'>
-                            <Button variant='outline-light' className='m-1' onClick={() => {user.setIsAuth(false); navigate(`${LOGIN_ROUTE}`)}}>Выйти</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() => {user.setIsAuth(false);user.setUser(false); console.log(user); navigate(`${LOGIN_ROUTE}`)}}>Выйти</Button>
 
                             <Image onClick={handleShow } style={{ width: 45, height: 45, marginLeft: 10 }} src="https://logos.telegram-plus.com/channels/id-daily/telegram_logo.jpg" roundedCircle />
                             <Offcanvas show={show} onHide={handleClose} placement='end'>
@@ -63,7 +63,7 @@ const NavBar = observer(() => {
 
                         <Container className='d-flex justify-content-end align-items-center'>
                             {/* <Button variant='outline-light' className='m-1' onClick={() => navigate(`${REGISTRATION_ROUTE}`)}>Зарегистрироваться</Button> */}
-                            <Button variant='outline-light' className='m-1' onClick={() =>{ user.setIsAuth(true);navigate(`${LOGIN_ROUTE}`)}}>Авторизоваться</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() =>{ user.setIsAuth(true);user.setUser(true); console.log(user);navigate(`${LOGIN_ROUTE}`)}}>Авторизоваться</Button>
                         </Container>
 
                     </Nav>
