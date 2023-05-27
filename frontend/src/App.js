@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import FooterBar from './components/Footer';
 import AppRouter from './components/AppRouter';
-import {useRoutes} from './routes';
+import useRoutes from './routes';
 // import NavBar from './components/NavBar';
 
 const App = ()=>{
@@ -12,7 +12,7 @@ const App = ()=>{
     <BrowserRouter>
       <NavBar />
         {routes}
-      <FooterBar/>
+      {/* <FooterBar/> */}
     </BrowserRouter>
   )
 }

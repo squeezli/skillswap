@@ -5,11 +5,14 @@ import { Context } from "./index";
 import Auth from "./pages/Auth";
 import Ads from "./pages/Ads";
 import Chat from './pages/Chat';
+import MyAds from './pages/MyAds';
 import AdsMore from "./pages/AdsMore";
+import { observer } from 'mobx-react-lite';
 
+const useRoutes = () => {
 
-export const useRoutes = () => {
     const { user } = useContext(Context)
+
 
     console.log(user.isAuth)
     if (user.isAuth) {
@@ -39,5 +42,6 @@ export const useRoutes = () => {
             <Route path="/*" element={<Navigate replace to="/login" />} />
         </Routes>
     )
-}
-}
+
+
+export default useRoutes;

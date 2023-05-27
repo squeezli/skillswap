@@ -6,16 +6,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import AdsList from '../components/AdsList';
 
-const Chat = () => {
+const MyAds = () => {
     return (
         <Container className='d-flex justify-content-center align-items-center'>
-        <Container className='d-flex justify-content-center align-items-start mt-5' style={{ height:"100%", width: 900 }}>
-            <h3>Вам никто не писал!</h3>
-
-        </Container>
+            <Container className='d-flex justify-content-center align-items-start mt-5' style={{ height: "100%", width: 900 }}>
+                <h3>Вы не создавали Объявления</h3>
+            </Container>
         </Container>
 
     )
 }
 
-export default Chat;
+export default MyAds;

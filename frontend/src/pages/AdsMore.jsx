@@ -10,7 +10,7 @@ import AdsList from '../components/AdsList';
 const AdsMore = () => {
     const navigate = useNavigate()
 
-    const ADS_ROUTE = '/Ads'
+    const ADS_ROUTE = '/ads'
 
     return (
         <Container
@@ -29,8 +29,6 @@ const AdsMore = () => {
                     <Button variant='outline-dark' className='m-1 mt-4' onClick={() => navigate(`${ADS_ROUTE}`)}>Назад</Button>
 
                 </Col>
-
-
             </Card>
         </Container>
     )

@@ -9,10 +9,10 @@ router.get("/")
 
 router.post("/create", passport.authenticate("jwt", {session: false}), adsContoller.create)
 
-router.get("/myAds")
-router.get("/myAds/:id")
-router.delete("/myAds/:id")
-router.put("/myAds/:id")
-router.post("/myAds")
+router.get("/myAds", adsContoller.getAll);
+router.get("/myAds/:id", adsContoller.getOne);
+router.delete("/myAds/:id", adsContoller.delete);
+router.put("/myAds/:id", adsContoller.update);
+router.post("/myAds", adsContoller.create);
 
 module.exports = router

@@ -20,6 +20,18 @@ class AdsController {
         return res.json(adsNames)       
 
     }
+
+    async getOne(req, res) {
+        const { id } = req.params
+        const ads = await Ads.findOne(
+            {
+                where: { id },
+            }
+        );
+
+        return res.json(ads)
+    }
+
     async delete(req, res){
         const ads = await Ads.findOne({
             where: {

@@ -4,12 +4,15 @@ import Card from 'react-bootstrap/Card';
 import { NavLink, useLocation } from 'react-router-dom'
 import Row from 'react-bootstrap/Row';
 import {useHttp} from "../hooks/http.hooks";
+import { useNavigate } from 'react-router-dom';
+
 
 const Auth = () => {
     const LOGIN_ROUTE = '/login';
-    const REGISTRATION_ROUTE = '/login';
+    const REGISTRATION_ROUTE = '/registration';
 
     const {request} = useHttp();
+    const navigate = useNavigate()
 
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE
@@ -35,7 +38,6 @@ const Auth = () => {
 
         }
     }
-
 
     return (
         <Container
@@ -84,12 +86,12 @@ const Auth = () => {
                                 <Button style={{ height: 40 }} variant='outline-success' >Регистрация</Button>
                             </div>
                         }
-                        <Button
+                        {/* <Button
                             variant='outline-success'
                             onClick={click}
                         >
                             {isLogin ? 'Войти' : 'Регистрация'}
-                        </Button>
+                        </Button> */}
                     </Row>
                 </Form>
             </Card>
