@@ -1,8 +1,11 @@
 const {Router} = require('express')
 const router = new Router()
+const adsContoller = require('../controllers/ads.contoller')
 
 router.get("/")
-router.get("/:id")
+
+
+router.post("/create", adsContoller.create)
 
 router.get("/myAds")
 router.get("/myAds/:id")

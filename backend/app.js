@@ -28,20 +28,20 @@ async function start() {
                 console.error('Ошибка подключения к базе данных:', error);
             });
 
-        // Создание таблиц в базе данных (если они не существуют)
-        await sequelize.sync({ force: true })
-            .then(() => {
-                console.log('Таблицы созданы');
-            })
-            .catch((error) => {
-                console.error('Ошибка создания таблиц:', error);
-            });
-            User.create({
-                firstName: 'John',
-                lastName: 'Doe',
-                email: 'johndoe@example.com',
-                password: 'password123',
-              })
+        // // Создание таблиц в базе данных (если они не существуют)
+        // await sequelize.sync({ force: true })
+        //     .then(() => {
+        //         console.log('Таблицы созданы');
+        //     })
+        //     .catch((error) => {
+        //         console.error('Ошибка создания таблиц:', error);
+        //     });
+        //     User.create({
+        //         firstName: 'John',
+        //         lastName: 'Doe',
+        //         email: 'johndoe@example.com',
+        //         password: 'password123',
+        //       })
     } catch (error) {
         console.log('Server Error', error.message)
         process.exit(1)
