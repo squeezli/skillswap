@@ -1,4 +1,5 @@
 const User = require("../models/users.models")
+const UserProfile = require("../models/usersProfiles.models")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
 
@@ -27,6 +28,8 @@ class AuthController {
             })
 
             newUser.save().then((user) => {
+                const newUserProfile = new UserProfile({description:null, profilePicture:null, userId:user.id})
+                newUserProfile.save().then((userProdile) => {})
                 const token = jwt.sign({ id: user.id, name: 'dsad' }, process.env.JWT_SECRET, { expiresIn: '1h' })
                 return res.json({ token: token })
             }).catch((err) => {
