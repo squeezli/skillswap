@@ -44,25 +44,35 @@ class AuthController {
 
         const { email, password } = req.body
 
+        // console.log(req.body)
+
         if (!email || !password) {
             return res.status(400).json({ error: 'Email и/или пароль не заполнены' })
         }
 
-        await User.findOne({ where: { email: email } }).then(async user => {
+        await User.findOne({ where: { email: email } }).then(user => {
+            if (!user) {
 
+                return res.status(400).json({ error: 'Email и/или пароль не совпадают' })
+            }
             // const isPasswordValid = await bcrypt.compare(password, user.password)
-            if(!user.password == password) {
+            console.log(user)
+            // console.log(password)
+
+            if (user.password != password) {
                 return res.status(400).json({ error: 'Email и/или пароль не совпадают' })
             }
 
             const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' })
 
             return res.json({ token: token })
-                
+
 
         }).catch((err) => {
             console.log(err)
-            return res.status(500).json({ error: 'Ошибка сервера' })
+            return res.status(400).json({ error: 'Email и/или пароль не совпадают' })
+
+            // return res.status(500).json({ error: 'Ошибка сервера' })
         })
 
     }
