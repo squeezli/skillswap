@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { NavLink, useLocation } from 'react-router-dom'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
+// import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
 import AdsList from '../components/AdsList';
 
 const AdsMore = ()=>{
