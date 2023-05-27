@@ -63,7 +63,7 @@ const NavBar = observer(() => {
 
                         <Container className='d-flex justify-content-end align-items-center'>
                             {/* <Button variant='outline-light' className='m-1' onClick={() => navigate(`${REGISTRATION_ROUTE}`)}>Зарегистрироваться</Button> */}
-                            <Button variant='outline-light' className='m-1' onClick={() =>{ user.setIsAuth(true);user.setUser(true); console.log(user);navigate(`${LOGIN_ROUTE}`)}}>Авторизоваться</Button>
+                            <Button variant='outline-light' className='m-1' onClick={() =>{ user.setIsAuth(true);navigate(`${LOGIN_ROUTE}`)}}>Авторизоваться</Button>
                         </Container>
 
                     </Nav>
