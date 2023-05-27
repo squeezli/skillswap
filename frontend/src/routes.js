@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Context } from "./index";
 import Auth from "./pages/Auth";
 import Ads from "./pages/Ads";
-
+import Chat from './pages/Chat';
 import AdsMore from "./pages/AdsMore";
 
 
@@ -16,9 +16,8 @@ export const useRoutes = () => {
         return (
             <Routes>
                 <Route path="/ads" element={<Ads />} />
-                <Route path="/ads/:id" element={<Ads />} />
-
-
+                <Route path="/ads/:id" element={<AdsMore />} />
+                <Route path="/chat" element={<Chat />} />
                 <Route path="/*" element={<Navigate replace to="/ads" />} />
             </Routes>
         )
@@ -29,7 +28,8 @@ export const useRoutes = () => {
         <Routes>
             <Route path="/login" element={<Auth />} />
             <Route path="/registration" element={<Auth />} />
-
+            <Route path="/ads" element={<Ads />} />
+            <Route path="/ads/:id" element={<AdsMore />} />
             <Route path="/*" element={<Navigate replace to="/login" />} />
         </Routes>
     )

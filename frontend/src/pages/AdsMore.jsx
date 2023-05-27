@@ -10,6 +10,8 @@ import AdsList from '../components/AdsList';
 const AdsMore = () => {
     const navigate = useNavigate()
 
+    const ADS_ROUTE = '/Ads'
+
     return (
         <Container
             className="d-flex justify-content-center align-items-start mt-5"
