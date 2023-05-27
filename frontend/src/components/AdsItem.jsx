@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 import { useNavigate } from 'react-router-dom';
-import { PRODUCT_ROUTE } from '../utils/consts';
+// import { PRODUCT_ROUTE } from '../utils/consts';
 
 const AdsItem = ({ad})=>{
     const navigate = useNavigate()

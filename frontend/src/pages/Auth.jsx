@@ -3,9 +3,10 @@ import { Button, Container, Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { NavLink, useLocation } from 'react-router-dom'
 import Row from 'react-bootstrap/Row';
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
+// import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
 const Auth = () => {
-
+const LOGIN_ROUTE = '/login';
+const REGISTRATION_ROUTE = '/login';
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE
     const [email, setEmail] = useState('');
